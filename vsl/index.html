@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+  <title>Explicativa Usuário do Opina Pro</title>
+  <link rel="icon" href="images/iconeopina.webp" type="image/png">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonte Montserrat via Tailwind -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+    body { font-family: 'Montserrat', sans-serif; }
+  </style>
+
+  <!-- Scripts Wistia -->
+  <script src="https://fast.wistia.com/embed/medias/ip73oudlbj.jsonp" async></script>
+  <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+</head>
+
+<body class="bg-white text-gray-800 flex flex-col items-center min-h-screen">
+ <!-- NOTIFICAÇÃO -->
+ <style>
+  .notification-container {
+    position: fixed;
+    top: 60px;
+    left: 10px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .notification {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: slide-in 0.5s forwards, fade-out 0.5s ease-in 4.5s forwards;
+  }
+
+  @keyframes slide-in {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-out {
+    to {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+  }
+</style>
+
+<div class="notification-container" id="notificationContainer"></div>
+
+<script>
+  const names = [
+    "Lucas Silva", "Ana Costa", "João Oliveira", "Mariana Souza",
+    "Felipe Pereira", "Clara Mendes", "Carlos Eduardo", "Julia Rocha",
+    "Mateus Almeida", "Beatriz Lima", "Gabriel Santos", "Maria Eduarda",
+    "Rafael Barbosa", "Larissa Fernandes", "Pedro Henrique", "Isabela Nunes",
+    "Guilherme Ribeiro", "Fernanda Carvalho", "Thiago Almeida", "Camila Borges",
+    "Bruno Machado", "Amanda Ferreira", "Vinícius Martins", "Juliana Ribeiro",
+    "Leonardo Gonçalves", "Paula Castro", "Renan Vieira", "Sabrina Cardoso",
+    "Rodrigo Teixeira", "Natália Moura", "André Monteiro", "Carolina Azevedo",
+    "Eduardo Lopes", "Tatiane Ramos", "Diego Santana", "Marcela Antunes",
+    "Ruan Rodrigues", "Vanessa Marques", "Caio Silva", "Luan Freitas",
+    "Danilo Oliveira", "Aline Dias", "Samuel Costa", "Sara Pereira",
+    "Victor Souza", "Nathalia Alves", "Alexandre Moreira", "Patrícia Lima",
+    "Marcos Vinícius", "Gabriela Campos", "Ricardo Cunha", "Emanuela Moraes"
+  ];
+
+
+  function getRandomName() {
+    return names[Math.floor(Math.random() * names.length)];
+  }
+
+  function getRandomValue() {
+ return (Math.random() * (800 - 350) + 350).toFixed(2);
+}
+
+  function showNotification() {
+    const container = document.getElementById("notificationContainer");
+    const randomName = getRandomName();
+    const randomValue = getRandomValue();
+
+    const notification = document.createElement("div");
+    notification.classList.add("notification");
+    notification.innerHTML = `${randomName} acabou de realizar um saque de <b style="color: #06B32E;">R$ ${randomValue}</b>`;
+
+    container.appendChild(notification);
+
+    // Remove the notification after 5 seconds
+    setTimeout(() => {
+      container.removeChild(notification);
+    }, 5000);
+  }
+
+  function startNotifications() {
+    showNotification();
+    const interval = Math.random() * (20000 - 5000) + 5000; // Intervalo entre 5 e 20 segundos
+    setTimeout(startNotifications, interval);
+  }
+
+  // Inicia as notificações
+  startNotifications();
+</script>
+
+<!-- NOTIFICAÇÃO -->
+<!-- Cabeçalho Ajustado com Margem Lateral -->
+<div class="w-full bg-[#06B32E] text-white font-bold text-center py-2 px-2 text-[14px] leading-tight break-words">
+  ASSISTA O VÍDEO ABAIXO PARA LIBERAR SEU SAQUE E ACESSO VITALÍCIO.
+</div>
+
+
+
+  <!-- Logo e Saldo -->
+  <div class="w-full max-w-sm flex items-center justify-between border-b border-gray-800 p-4 mb-6">
+    <img src="images/logocolorida.webp" alt="OpinaPro Logo" class="w-32 ml-1">
+
+    <div class="flex flex-col items-end border-2 border-[#06B32E] rounded-md px-3 py-1">
+      <span class="text-[10px] font-bold bg-white px-2 text-gray-800">SALDO</span>
+      <span class="text-lg font-bold text-gray-800">R$ <span class="saldoAtualizado">473.00</span></span>
+    </div>
+  </div>
+
+  <!-- Conteúdo principal -->
+<div class="w-full max-w-sm text-center px-2 flex-1">
+  <h4 class="text-[#06B32E] text-lg font-bold mb-2">DESBLOQUEIO DE SALDO</h4>
+  <p class="text-sm mb-1">Veja como liberar seu saque</p>
+  <p class="text-sm mb-4">assistindo ao vídeo.</p>
+
+  <!-- Vídeo Wistia -->
+  <div class="relative w-full rounded-lg mb-6" style="padding-top: 177.22%;">
+    <div class="absolute top-0 left-0 w-full h-full">
+      <div class="wistia_embed wistia_async_ip73oudlbj seo=true videoFoam=true w-full h-full relative">
+        <div class="wistia_swatch w-full h-full absolute top-0 left-0 opacity-0 transition-opacity duration-200">
+          <img src="https://fast.wistia.com/embed/medias/ip73oudlbj/swatch" alt="" aria-hidden="true" class="w-full h-full object-cover blur-sm" onload="this.parentNode.style.opacity=1;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="text-gray-500 text-sm mb-6">
+    Antes de prosseguir, assista ao vídeo acima!
+  </p>
+
+  <!-- Botão com espaço -->
+  <!-- Contador de desbloqueio -->
+  <div id="contador-container" class="flex flex-col items-center justify-center mb-8">
+  <p id="contador-texto" class="text-[#06B32E] font-bold text-lg">Vaga desbloqueia em <span id="contador">10</span> segundos...</p>
+  <p class="text-gray-500 text-sm mt-2">Assista o vídeo de instruções acima antes de prosseguir!</p>
+</div>
+
+<!-- Botão escondido -->
+<div id="botao-desbloquear" class="flex justify-center mb-10" style="display: none;">
+  <a id="desbloquearButton" href="../link/" target="_blank" class="bg-[#06B32E] text-white font-bold w-full max-w-xs py-3 rounded-md hover:bg-green-700 transition">
+    DESBLOQUEAR AGORA
+  </a>
+</div>
+</div>
+<!-- <<< FECHA O CONTEÚDO AQUI! -->
+
+<!-- Rodapé Correto -->
+<div class="w-full bg-black py-6 flex justify-center items-center gap-6">
+  <img src="images/reclameaqui.webp" alt="Imagem Reclame Aqui" class="w-24 h-auto">
+  <img src="images/siteblindado.webp" alt="Imagem Site Blindado" class="w-24 h-auto">
+</div>
+
+<!-- Script aviso video-->
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    let contador = 10;
+    const contadorElemento = document.getElementById('contador');
+    const contadorContainer = document.getElementById('contador-container');
+    const botaoDesbloquear = document.getElementById('botao-desbloquear');
+
+    const interval = setInterval(function() {
+      contador--;
+      contadorElemento.textContent = contador;
+
+      if (contador <= 0) {
+        clearInterval(interval);
+        contadorContainer.style.display = 'none';
+        botaoDesbloquear.style.display = 'flex';
+      }
+    }, 1000); // Atualiza a cada 1 segundo
+  });
+</script>
+
+  <!-- Script para adicionar parâmetros UTM -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const links = document.querySelectorAll('a[href]:not([href^="#"])');
+
+      links.forEach(link => {
+        try {
+          const href = new URL(link.href, window.location.origin);
+          urlParams.forEach((value, key) => {
+            href.searchParams.set(key, value);
+          });
+          link.href = href.toString();
+        } catch (error) {
+          console.error(`Erro ao processar o link: ${link.href}`, error);
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
