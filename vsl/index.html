@@ -59,62 +59,7 @@
   }
 </style>
 
-<div class="notification-container" id="notificationContainer"></div>
 
-<script>
-  const names = [
-    "Lucas Silva", "Ana Costa", "João Oliveira", "Mariana Souza",
-    "Felipe Pereira", "Clara Mendes", "Carlos Eduardo", "Julia Rocha",
-    "Mateus Almeida", "Beatriz Lima", "Gabriel Santos", "Maria Eduarda",
-    "Rafael Barbosa", "Larissa Fernandes", "Pedro Henrique", "Isabela Nunes",
-    "Guilherme Ribeiro", "Fernanda Carvalho", "Thiago Almeida", "Camila Borges",
-    "Bruno Machado", "Amanda Ferreira", "Vinícius Martins", "Juliana Ribeiro",
-    "Leonardo Gonçalves", "Paula Castro", "Renan Vieira", "Sabrina Cardoso",
-    "Rodrigo Teixeira", "Natália Moura", "André Monteiro", "Carolina Azevedo",
-    "Eduardo Lopes", "Tatiane Ramos", "Diego Santana", "Marcela Antunes",
-    "Ruan Rodrigues", "Vanessa Marques", "Caio Silva", "Luan Freitas",
-    "Danilo Oliveira", "Aline Dias", "Samuel Costa", "Sara Pereira",
-    "Victor Souza", "Nathalia Alves", "Alexandre Moreira", "Patrícia Lima",
-    "Marcos Vinícius", "Gabriela Campos", "Ricardo Cunha", "Emanuela Moraes"
-  ];
-
-
-  function getRandomName() {
-    return names[Math.floor(Math.random() * names.length)];
-  }
-
-  function getRandomValue() {
- return (Math.random() * (800 - 350) + 350).toFixed(2);
-}
-
-  function showNotification() {
-    const container = document.getElementById("notificationContainer");
-    const randomName = getRandomName();
-    const randomValue = getRandomValue();
-
-    const notification = document.createElement("div");
-    notification.classList.add("notification");
-    notification.innerHTML = `${randomName} acabou de realizar um saque de <b style="color: #06B32E;">R$ ${randomValue}</b>`;
-
-    container.appendChild(notification);
-
-    // Remove the notification after 5 seconds
-    setTimeout(() => {
-      container.removeChild(notification);
-    }, 5000);
-  }
-
-  function startNotifications() {
-    showNotification();
-    const interval = Math.random() * (20000 - 5000) + 5000; // Intervalo entre 5 e 20 segundos
-    setTimeout(startNotifications, interval);
-  }
-
-  // Inicia as notificações
-  startNotifications();
-</script>
-
-<!-- NOTIFICAÇÃO -->
 <!-- Cabeçalho Ajustado com Margem Lateral -->
 <div class="w-full bg-[#06B32E] text-white font-bold text-center py-2 px-2 text-[14px] leading-tight break-words">
   ASSISTA O VÍDEO ABAIXO PARA LIBERAR SEU SAQUE E ACESSO VITALÍCIO.
@@ -197,25 +142,47 @@
   });
 </script>
 
-  <!-- Script para adicionar parâmetros UTM -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const links = document.querySelectorAll('a[href]:not([href^="#"])');
+ <!-- UTMFY-->
+      <script
+      src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+      data-utmify-prevent-xcod-sck
+      data-utmify-prevent-subids
+      async
+      defer
+    ></script>
+      <!-- Clarity-->
+       <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "tsw6obkk55");
+</script>
+<!-- Backredirect-->
+      <script>
+      // ALTERE O LINK PARA A PÁGINA QUE QUISER MOSTRAR QUANDO O USUÁRIO TENTAR SAIR
+      const link = 'https://opina-pro-oficial.vercel.app/back1';
 
-      links.forEach(link => {
-        try {
-          const href = new URL(link.href, window.location.origin);
-          urlParams.forEach((value, key) => {
-            href.searchParams.set(key, value);
-          });
-          link.href = href.toString();
-        } catch (error) {
-          console.error(`Erro ao processar o link: ${link.href}`, error);
-        }
-      });
-    });
-  </script>
+      function setBackRedirect(url) {
+        let urlBackRedirect = url;
+        urlBackRedirect = urlBackRedirect =
+          urlBackRedirect.trim() +
+          (urlBackRedirect.indexOf('?') > 0 ? '&' : '?') +
+          document.location.search.replace('?', '').toString();
 
+        history.pushState({}, '', location.href);
+        history.pushState({}, '', location.href);
+        history.pushState({}, '', location.href);
+
+        window.addEventListener('popstate', () => {
+          console.log('onpopstate', urlBackRedirect);
+          setTimeout(() => {
+            location.href = urlBackRedirect;
+          }, 1);
+        });
+      }
+
+      setBackRedirect(link);
+    </script>
 </body>
 </html>
