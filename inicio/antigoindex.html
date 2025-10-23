@@ -1,0 +1,2374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+      <!-- Fonte Montserrat -->
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500" rel="stylesheet">
+      <!-- Fonte Material Symbols Outlined -->
+      <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+      <!-- Estilos personalizados -->
+      <!-- Título da página -->
+      <title>Explicativa Usuário do Opina Pro</title>
+      <!-- Favicon -->
+      <link rel="icon" href="images/iconeopinapro.webp" type="image/png">
+      <style>
+         body {
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Menu de cima */
+  
+  .menu {
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    height: 70px; /* Ajuste a altura desejada */
+    background: linear-gradient(180deg, #f0f4f8, #fff);
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    padding: 5px;
+    box-sizing: border-box;
+    z-index: 9998; /* Para garantir que o menu fique acima de outros elementos */
+    border-radius: 0px 0px 20px 20px; /* Top-left, top-right, bottom-right, bottom-left */
+    box-shadow: none;
+}
+
+
+  .menu::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #f0f4f8, #fff);
+    z-index: -1;
+    border-radius: 20px;
+  }
+  
+  .menu a {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  
+  .menu a img {
+    max-width: 100%; /* Ajuste o tamanho máximo da imagem */
+    max-height: 100%; /* Ajuste o tamanho máximo da imagem */
+    display: block;
+  }
+
+  .buttons-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .valor-box {
+    width: 130px;
+    height: 25px;
+    background-color: #06B32E;
+
+    border-radius: 12px;
+    padding: 10px;
+    align-items: center;
+    line-height: 25px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .valor-box-saque {
+    width: 99%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 20px;
+    align-items: center;
+    line-height: 20px;
+    display: block;
+    justify-content: center;
+    margin: 0 auto;
+    box-shadow: none;
+    padding-top: 10px;
+    padding-bottom: 40px;
+  }
+
+
+  .valor-box span {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  #valor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+  }
+  
+  #valor-saque {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 21px;
+  }
+
+  #valor-money {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 21px;
+  }
+
+  /* Menu de baixo */
+
+  .menuemb {
+    position: fixed;
+    bottom: 1%;
+    width: 95%;
+    left: 2.5%;
+    right: 2.5%;
+    background: linear-gradient(180deg, #fff, #fff);
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: none;
+    border-radius: 20px;
+    z-index: 9995;
+  }
+
+  
+  .menuemb a {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    height: 50px;
+  }
+
+  .menuemb a img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+
+
+  /* BOTÃ•ES LIKE E DISLIKE*/
+  .like-dislike-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0px;
+  }
+
+  .like-button, .dislike-button {
+    border: 2px solid;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    text-align: center; /* Centraliza o texto */
+    margin: 0 auto;
+    right: 5%;
+    left: 5%;
+  }
+
+  .like-button {
+    border-color: green;
+    color: green;
+    width: 49%;
+    right: 5%;
+    left: 5%;
+    border-radius: 8px;
+  }
+
+  .dislike-button {
+    border-color: red;
+    color: red;
+    width: 49%;
+    right: 5%;
+    left: 5%;
+    border-radius: 8px;
+  }
+
+  .liked {
+    background: linear-gradient(180deg, green, green);
+    color: #fff;
+  }
+  
+  .disliked {
+    background: linear-gradient(180deg, red, red);
+    color: #fff;
+  }
+
+  
+
+  .button-container {
+    display: flex;
+    margin: 0 auto;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .square-button {
+    border-radius: 12px;
+    border: none;
+    aspect-ratio: 1 / 1;
+    margin: 5px;
+    background-color: #fff;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: none;
+  }
+
+  .square-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Redimensiona a imagem para preencher o botão */
+  }
+
+  .square-button.active {
+    background-color: #06B32E;
+
+    transform: scale(1.1);
+  }
+
+ .input-container input[type="text"] {
+  width: 96%;
+  font-size: 15px;
+  color: #007bff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+
+  /* POPUP SAQUE */
+
+  .popup-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    max-width: 400px; /* Limita para não estourar em telas grandes */
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); /* sombra leve e elegante */
+    display: none;
+    z-index: 10000;
+    animation: popupFadeIn 0.3s ease;
+}
+/* Animação rápida ao abrir */
+@keyframes popupFadeIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+  .popup-container2 {
+    display: none;
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #292929;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 9997;
+    opacity: 100%;
+    color: white;
+    box-shadow: none;
+  }
+
+  
+
+  .popup-text {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+    display: block;
+    text-align: center;
+  }
+
+  .popup-button {
+    background-color: #FF0000;
+    width: 95%;
+    border-radius: 8px;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .desbloquear-button {
+    background-color: #06B32E;
+
+    width: 90%;
+    border-radius: 8px;
+    color: #fff;
+    border: none;
+    height: 40px;
+    font-size: 14px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  /* POPUP LIMITE DE SAQUE */
+
+  .popup-containerL {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    max-width: 400px; /* Limita no desktop */
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); /* sombra leve e elegante */
+    display: none;
+    z-index: 10000;
+    animation: popupFadeInL 0.3s ease; /* animação para suavizar */
+}
+
+/* Animação de entrada */
+@keyframes popupFadeInL {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+  .popup-textL {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+    display: block;
+    text-align: center;
+  }
+
+  .popup-buttonL {
+    background-color: #FF0000;
+    width: 95%;
+    border-radius: 8px;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .desbloquear-buttonL {
+    background: linear-gradient(135deg, #28a745, #06641c);
+    width: 95%;
+    border-radius: 8px;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Style dos Ã­cones do Google */
+
+  .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 600,
+    'GRAD' 0,
+    'opsz' 30;
+  }
+  
+  /* Barra de carregamento */
+  
+  #progress-bar {
+      width: 95%;
+      height: 20px;
+      background-color: #ddd;
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 0 auto;
+  }
+      
+  #progress-bar div {
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: #ff0000;
+      animation: progress 86400s linear; /* ajustar segundos */
+      animation-fill-mode: forwards;
+      animation-iteration-count: 1;
+  }
+      
+  @keyframes progress {
+      from { width: 0%; }
+      to { width: 100%; }
+  }
+  
+  
+  /* Caixa de login */
+  
+  .loginbox {
+    width: 90%; /* Largura do retÃ¢ngulo */
+    height: 250px; /* Altura do retÃ¢ngulo */
+    background-color: #d9d9d9; /* Cor de fundo do retÃ¢ngulo */
+    border-radius: 20px; /* Raio dos cantos do retÃ¢ngulo */
+    display: block;
+    margin: 0 auto;
+    box-shadow: none;
+    
+  }
+  
+  .input-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .input-container label {
+
+    display: block;
+    font-size: 17px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 10px; /* espaçamento entre o título e a caixa */
+  }
+
+  .input-container input[type="text"] {
+    width: 96%;
+    font-size: 15px;
+    color: #007bff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  /* Estilo para a bolinha girando */
+  .loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 4px solid rgba(0, 0, 0, 0.3);
+    border-top: 4px solid #28a745;
+    border-radius: 50%;
+    animation: spin 1.5s linear infinite;
+    vertical-align: middle;
+  }
+  
+  .prosseguir-button {
+    background-color: #06B32E;
+    width: 90%;
+    border-radius: 12px;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    font-weight: bold;
+    margin: 0 auto;
+  }
+  
+  .prosseguir-button1 {
+    background: linear-gradient(135deg, #28a745, #06641c);
+    width: 90%;
+    border-radius: 8px;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  
+  
+  
+  .criar-conta {
+    background-color: #fff;
+    width: 90%;
+    border-radius: 8px;
+    color: rgb(101, 101, 101);
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* NotificaÃ§Ã£o de dinheiro */
+
+  .notificacaoDinheiro {
+      display: none;
+      margin: 0 auto;
+      position: fixed;
+      top: -100px; /* Posiciona a notificaÃ§Ã£o acima da tela */
+      left: 0;
+      right: 0;
+      color: #333;
+      text-align: center;
+      box-shadow: none;
+      background-image: linear-gradient(125deg, #5575FD, #2B50F0);
+      z-index: 9999;
+      height: 50px;
+      width: 60%;
+      border-radius: 20px;
+      padding-bottom: 10px;
+      padding-top: 10px;
+  }
+      
+  .notificacaoDinheiro.activeDinheiro {
+      display: block;
+      animation: slideInDinheiro 0.5s forwards;
+  }
+      
+  .notificacaoDinheiro.activeDinheiro.slideOutDinheiro {
+      animation: slideOutDinheiro 0.5s forwards;
+  }
+      
+  @keyframes slideInDinheiro {
+      from {
+          top: -100px;
+      }
+      to {
+          top: 0;
+      }
+  }
+      
+  @keyframes slideOutDinheiro {
+      from {
+          top: 0;
+      }
+      to {
+          top: -100px;
+      }
+  }
+  
+  /* Slogan inicio */
+  
+  .slogan-inicio {
+      display: flex;
+      margin: 0 auto;
+      justify-content: center; 
+      align-items: center;
+      background-color: #7a7a7a;
+      box-shadow: none;
+      height: 70px;
+      width: 95%;
+      border-radius: 20px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-left: 15px;
+      padding-right: 15px;
+  }
+  
+  .outer-box {
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: none;
+  }
+
+  .outer-box-login {
+  
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+
+    border-radius: 10;
+    box-shadow: none;
+  }
+  
+
+
+.center-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Ajuste conforme necessÃ¡rio para ocupar toda a altura da tela */
+}
+
+  .white-box {
+      display: block;
+      margin: 0 auto;
+      background-color: #fff;
+      height: 100%;
+      width: 99%;
+      border-radius: 10px;
+      padding-top: 20px;
+      padding-bottom: 22px;
+  }
+
+  .imagem {
+    display: block;
+    margin: 0 auto;
+    background-color: #fff;
+    height: 80%;
+    width: 90%; /* na verdade falta o width explícito */
+    border-radius: 20px;
+    box-shadow: none;
+
+  }
+
+  .white-box-login {
+    display: block;
+    margin: 0 auto;
+    background-color: #fff;
+    height: 100%;
+    width: 99%;
+    border-radius: 20px;
+    padding-top: 20px;
+    padding-bottom: 22px;
+}
+  
+  .footer-text {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #ffffff; /* Cor do texto */
+    padding: 10px; /* espaçamento interno do texto */
+    box-sizing: border-box; /* Evita que o padding afete a largura total */
+    padding-bottom: 20px;
+}
+
+
+
+  .wbc {
+      text-align: center;
+      color: white;
+  }
+  
+  .gerarCodigo {
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+      background: linear-gradient(180deg, #28a745, #28a745);
+      border: 0;
+      color: white;
+      border-radius: 8px;
+      width: 50%;
+      height: 30px;
+      line-height: 27px;
+      font-size: 16px;
+  }
+
+  .gerarCodigo2 {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    background: linear-gradient(180deg, #28a745, #28a745);
+    border: 0;
+    color: white;
+    font-weight: bold;
+    border-radius: 12px;
+    width: 85%;
+    height: 35px;
+    line-height: 30px;
+    font-size: 16px;
+}
+  
+  
+  
+  .centro {
+    background-color: white;
+    height: 100%;
+    width: 95%;
+    left: 2.5%;
+    display: flex;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: none;
+
+  }   
+
+  .form-label,
+  .form-input {
+    border-radius: 12px;
+    width: 90%;
+    justify-content: center;
+    display: flex;
+    margin: 0 auto;
+    box-sizing: border-box; /* Adicionado para incluir borda e preenchimento nas dimensÃµes */
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .form-input {
+    border: 1px solid #202020;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  .form-label {
+    height: 35px;
+    color: white;
+    background-color: rgb(99, 99, 99);
+    line-height: 35px;
+    margin-bottom: 15px;
+  }
+
+
+  #container-progresso {
+    position: relative;
+    width: 200px; /* Ajuste para o tamanho desejado */
+    height: 100px; /* Ajuste para o tamanho desejado */
+    text-align: center;
+  }
+  
+  #barra-progresso-svg {
+    width: 100%;
+    height: 100%; 
+  }
+  
+  #minha-barra-progresso {
+    stroke-linecap: round; /* Pontas redondas */
+    stroke-dasharray: 0 100; /* ComeÃ§a vazia */
+    animation: preencherAnimacao 2.5s linear forwards; /* AnimaÃ§Ã£o de preenchimento em 5 segundos */
+  }
+  
+  @keyframes preencherAnimacao {
+    100% {
+      stroke-dasharray: 100 1; /* Termina preenchida */
+    }
+  }
+  
+  #texto-progresso {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #28a745; /* Cor do texto */
+  }
+  
+  #meu-valor-progresso {
+    display: block;
+    font-size: 1.2em; /* Ajuste para o tamanho desejado */
+    font-weight: bold;
+  }
+  
+
+  
+  .faq-container {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    max-width: 600px;
+    border-radius: 8px;
+    color: #fff;
+  }
+  
+  .faq-item {
+    margin-bottom: 16px;
+    border: 1px solid #f0f4f8;
+    border-radius: 12px;
+  }
+  
+  .question {
+    padding: 16px;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 8px;
+    color: rgb(101, 101, 101);
+    font-weight: bold;
+    box-shadow: none;
+  }
+  
+  .answer {
+    padding: 16px;
+    display: none;
+    background-color: #06B32E;
+    color: white;
+  }
+  .answer.active {
+    display: block;
+    border-radius: 8px;
+  }
+
+  .faq-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #06B32E;
+    text-align: center;
+  }
+
+
+
+
+
+
+  .rating-container {
+    display: flex;
+    width: 95%;
+    margin: 0 auto;
+  }
+  
+  .rating-button {
+    background-color: rgb(226, 226, 226); /* Cor cinza inicial */
+    border: none;
+    width: 95%;
+    height: 40px;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* TransiÃ§Ã£o suave na mudanÃ§a de cor */
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(101, 101, 101);
+    box-shadow: none;
+  }
+  
+  .rating-button.active {
+    background-color: #06B32E; /* Cor verde quando clicado */
+    color: white;
+  }
+
+  .pergunta-whats {
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(101, 101, 101);
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 25px;
+    margin-bottom: 5px;
+  }
+  
+
+  .enviarCodigo {
+    background-color: #06B32E;
+
+    width: 93%;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    margin: 0px auto;
+    box-sizing: border-box;
+    margin-top: 15px;
+  }
+
+  .card__satisfacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card__satisfacao h2,
+.card__resposta h2 {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.card__gradeContainer {
+    display: grid;
+    width: 90%;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    margin-top: 20px;
+}
+
+.card__grade {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    transition: all ease 0.3s;
+}
+
+.card__grade i {
+    font-size: 32px;
+    color: #7e7e7e;
+}
+
+.card__gradeDescricao {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin: 5px 0px 0px 0px;
+    color: #7e7e7e;
+}
+
+.lordicon-style {
+         width: 200px;
+         height: 200px;
+         display: flex;
+         margin: 0 auto;
+         margin-top: -20px;
+         margin-bottom: -20px;
+      }
+      @media (max-width: 480px) {
+  .menu, .menuemb {
+    height: 60px;
+    padding: 5px;
+  }
+
+  .buttons-container {
+    padding: 5px;
+  }
+
+  .valor-box {
+    width: 100px;
+    height: 22px;
+    padding: 5px;
+    font-size: 16px;
+  }
+
+  .valor-box span,
+  #valor, #valor-saque, #valor-money {
+    font-size: 18px;
+  }
+
+  .enviarCodigo, .desbloquear-button, .prosseguir-button, .criar-conta {
+    width: 90%;
+    font-size: 21px;
+    padding: 8px 12px;
+    height: auto;
+  }
+
+  .form-input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .popup-text {
+    font-size: 14px;
+  }
+
+  .faq-title {
+    font-size: 24px;
+  }
+
+  .pergunta-whats {
+    font-size: 14px;
+  }
+
+  .rating-button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .imagem img {
+    width: 70%;
+  }
+
+  .square-button img {
+    object-fit: contain;
+  }
+
+  /* Ajuste para o botão de menu */
+  .material-symbols-outlined {
+  font-size: 26px; /* ao invés de 30px */
+  margin: 5px;
+}
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* loader */
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease; /* Para o fade-out */
+}
+
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #61CE70;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+      </style>
+   </head>
+   <body>
+      <div class="loader-overlay" id="loader"> 
+         <div class="loader"></div>
+       </div>
+       
+      <audio id="meuAudio">
+         <source src="media/dinheiro.mp3" type="audio/mp3">
+      </audio>
+      
+      <!--------------------- Página de Login --------------------->
+      <div id="login" style="display: block;">
+         <div style="padding-top:30%;"></div>
+         <div class="outer-box-login">
+            <div class="white-box-login">
+               <img src="images/logoopinapro.webp" style="width:30%; margin: 0 auto; display: flex;">
+               <p class="popup-textL" style="text-align: center; color: rgb(101, 101, 101); font-weight: bold; font-size: 18px;">Bem-vindo(a) ao OpinaPro</p>
+               <p class="popup-textL" style="text-align: center; color: rgb(101, 101, 101); font-size: 15px;">Insira seu e-mail para prosseguir!</p>
+               <!-- Campo de email -->
+               <input 
+                  type="email" 
+                  name="email" 
+                  id="email" 
+                  class="form-input" 
+                  style="margin-top:20px;" 
+                  placeholder="E-mail" 
+                  required>
+               <button 
+                  class="prosseguir-button" 
+                  id="prosseguir-button" 
+                  style="margin-top: 15px;" 
+                  onclick="validarEmail(event)" 
+                  href="#">
+                  ENTRAR
+               </button>
+               <div style="margin-bottom: 10px;"></div>
+            </div>
+         </div>
+      </div>
+
+         <div class="footer-text">
+            <p style="text-align: center; color: rgb(101, 101, 101); font-size: 15px; margin-top: 30px; font-weight: bold;">2025 OpinaPro LLC</p>
+            <p style="text-align: center; color: rgb(101, 101, 101); font-size: 14px; margin-top: -10px; margin-bottom: 0px;">Termos e Politica de Privacidade</p>
+         </div>
+      </div>
+      <div id="inicio" style="display: none;">
+         <div class="menu">
+            <a style="width: 50%; ">
+            <img src="images/logoopinapro.webp">
+            </a>
+            <div style="width: 45%;" class="buttons-container" href="#" onclick="mostrarPagina('saque')">
+               <div class="valor-box">
+                  <span id="valor" style="max-width: 100%;">R$ 100.00</span>
+               </div>
+            </div>
+         </div>
+         <div style="margin-bottom: 100px;"></div>
+         <!--------------------- Anuncio 1 --------------------->
+         <div class="outer-box" id="ad1" style="display: block;">
+            <div class="white-box">
+               <p style="font-size: 22px; text-align: center; font-weight: bold; margin-top: 0px; margin-bottom: 15px; color: #06B32E;">Responda e ganhe R$33,00!</p>
+               <div class="imagem">
+                  <img src="images/caixa.png" style="max-width: 150px; max-height: 150px; width: auto; height: auto; margin: 0 auto; display: block;">
+               </div>
+               <p class="pergunta-whats">De 1 a 5, que nota voce da para o atendimento do banco Inter?</p>
+               <div class="rating-container" id="rating-container-1">
+                  <button class="rating-button" data-rating="1">1 </button>
+                  <button class="rating-button" data-rating="2">2 </button>
+                  <button class="rating-button" data-rating="3">3 </button>
+                  <button class="rating-button" data-rating="4">4 </button>
+                  <button class="rating-button" data-rating="5">5 </button>
+               </div>
+               <p class="pergunta-whats">Em um banco, voce prefere um cartao com limite maior ou menores taxas?</p>
+               <div class="rating-container" id="rating-container-2">
+                  <button class="rating-button" data-rating="1">Limite maior</button>
+                  <button class="rating-button" data-rating="2">Menores taxas</button>
+               </div>
+               <p class="pergunta-whats">Voce faria um emprestimo nesse banco atualmente?</p>
+               <div class="rating-container" id="rating-container-3">
+                  <button class="rating-button" data-rating="1">Sim</button>
+                  <button class="rating-button" data-rating="2">Nao </button>
+               </div>
+               <button type="button" class="enviarCodigo" id="B1" onclick="showLoadingB1();" aria-label="Enviar respostas do questionário 1">Enviar respostas</button>
+            </div>
+         </div>
+         <!---- Popup B1 ---->
+         <div class="popup-container" id="popupB1" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="popupB1Title">
+                        
+             <!-- Lordicon animado -->
+             <lord-icon
+                      src="https://cdn.lordicon.com/qnwzeeae.json"
+                      trigger="loop"
+                      colors="primary:#06B32E,secondary:#f4f4f4"
+                      class="lordicon-style">
+                   </lord-icon>
+             <!-- Texto do Popup -->
+             <span id="popupB1Title" class="popup-text" style="font-size: 20px;">Você recebeu:</span>
+             <span class="popup-text" style="font-size: 40px; font-weight: bold; margin-top: -10px; color: #06B32E;">R$ 33,00</span>
+         </div>
+
+
+         <!--------------------- Anuncio 2 --------------------->
+         <div class="outer-box" id="ad2" style="display: none;">
+            <div class="white-box">
+               <p style="font-size: 22px; text-align: center; font-weight: bold; margin-top: 0px; margin-bottom: 15px; color: #06B32E;">Responda e ganhe R$34,00!</p>
+               <div class="imagem">
+                  <!-- Exemplo imagem do Banco Brasil -->
+                  <img src="images/bancobrasil.png" style="max-width: 150px; max-height: 150px; width: auto; height: auto; margin: 0 auto; display: block;">
+               </div>
+               <p class="pergunta-whats">De 1 a 5, que nota voce da para o atendimento do Nubank?</p>
+               <div class="rating-container" id="rating-container-4">
+                  <button class="rating-button" data-rating="1">1 </button>
+                  <button class="rating-button" data-rating="2">2 </button>
+                  <button class="rating-button" data-rating="3">3 </button>
+                  <button class="rating-button" data-rating="4">4 </button>
+                  <button class="rating-button" data-rating="5">5 </button>
+               </div>
+               <p class="pergunta-whats">Em um banco, voce prefere um cartao com limite maior ou menores taxas?</p>
+               <div class="rating-container" id="rating-container-5">
+                  <button class="rating-button" data-rating="1">Limite maior</button>
+                  <button class="rating-button" data-rating="2">Menores taxas</button>
+               </div>
+               <p class="pergunta-whats">Voce faria um emprestimo nesse banco atualmente?</p>
+               <div class="rating-container" id="rating-container-6">
+                  <button class="rating-button" data-rating="1">Sim</button>
+                  <button class="rating-button" data-rating="2">Nao </button>
+               </div>
+               <button type="button" class="enviarCodigo" id="B2" onclick="showLoadingB2();" aria-label="Enviar respostas do questionário 2">Enviar respostas</button>
+            </div>
+         </div>
+         <!---- Popup B2 ---->
+         <div class="popup-container" id="popupB2" role="dialog" aria-modal="true" aria-labelledby="popupB2Title">
+                       
+             <!-- Lordicon animado -->
+             <lord-icon
+                      src="https://cdn.lordicon.com/qnwzeeae.json"
+                      trigger="loop"
+                      colors="primary:#06B32E,secondary:#f4f4f4"
+                      class="lordicon-style">
+                   </lord-icon>
+            <span id="popupB2Title" class="popup-text" style="font-size: 20px;">Você recebeu:</span>
+            <span class="popup-text" style="font-size: 40px; font-weight: bold; margin-top: -10px; color: #06B32E;">R$ 34,00</span>
+         </div>
+         <!----------------------"p3" ---------------------->
+         <div class="outer-box" id="ad3" style="display: none;">
+            <div class="white-box">
+               <p style="font-size: 22px; text-align: center; font-weight: bold; margin-top: 0px; margin-bottom: 15px; color: #06B32E;">Responda e ganhe R$47,00!</p>
+               <div class="imagem">
+                  <img src="images/apple.png" style="max-width: 150px; max-height: 150px; width: auto; height: auto; margin: 0 auto; display: block;">
+               </div>
+               <p class="pergunta-whats">De 1 a 5, que nota voce da para a Samsung?</p>
+               <div class="rating-container" id="rating-container-7">
+                  <button class="rating-button" data-rating="1">1 </button>
+                  <button class="rating-button" data-rating="2">2 </button>
+                  <button class="rating-button" data-rating="3">3 </button>
+                  <button class="rating-button" data-rating="4">4 </button>
+                  <button class="rating-button" data-rating="5">5 </button>
+               </div>
+               <p class="pergunta-whats">Em uma loja de Eletronicos, voce prefere mais Celular ou Tablet?</p>
+               <div class="rating-container" id="rating-container-8">
+                  <button class="rating-button" data-rating="1">Celular</button>
+                  <button class="rating-button" data-rating="2">Tablet</button>
+               </div>
+               <p class="pergunta-whats">Com base na sua experiencia geral, voce recomendaria a Apple a amigos e familiares?</p>
+               <div class="rating-container" id="rating-container-9">
+                  <button class="rating-button" data-rating="1">Sim</button>
+                  <button class="rating-button" data-rating="2">Nao </button>
+               </div>
+               <button type="button" class="enviarCodigo" id="B3" onclick="showLoadingB3();" aria-label="Enviar respostas do questionário 3">Enviar respostas</button>
+            </div>
+         </div>
+         <!---- Popup B3 ---->
+         <div class="popup-container" id="popupB3" role="dialog" aria-modal="true" aria-labelledby="popupB3Title">
+            <lord-icon
+                     src="https://cdn.lordicon.com/qnwzeeae.json"
+                     trigger="loop"
+                     colors="primary:#06B32E,secondary:#f4f4f4"
+                     class="lordicon-style">
+                  </lord-icon>
+            <span id="popupB3Title" class="popup-text" style="font-size: 20px;">Você recebeu:</span>
+            <span class="popup-text" style="font-size: 40px; font-weight: bold; margin-top: -10px; color: #06B32E;">R$ 47,00</span>
+         </div>
+         <!---------------------- Conteúdo do "p4" ---------------------->
+         <div class="outer-box" id="ad4" style="display: none;">
+            <div class="white-box">
+               <p style="font-size: 22px; text-align: center; font-weight: bold; margin-top: 0px; margin-bottom: 15px; color: #06B32E;">Responda e ganhe R$43,00!</p>
+               <div class="imagem">
+                  <img src="images/amazon.png" style="max-width: 150px; max-height: 150px; width: auto; height: auto; margin: 0 auto; display: block;">
+               </div>               
+               <p class="pergunta-whats">De 1 a 5, que nota voce da para o Aliexpress?</p>
+               <div class="rating-container" id="rating-container-10">
+                  <button class="rating-button" data-rating="1">1 </button>
+                  <button class="rating-button" data-rating="2">2 </button>
+                  <button class="rating-button" data-rating="3">3 </button>
+                  <button class="rating-button" data-rating="4">4 </button>
+                  <button class="rating-button" data-rating="5">5 </button>
+               </div>
+               <p class="pergunta-whats">Voce prefere comprar produtos pela internet ou loja fisica?</p>
+               <div class="rating-container" id="rating-container-11">
+                  <button class="rating-button" data-rating="1">Internet</button>
+                  <button class="rating-button" data-rating="2">Pessoalmente</button>
+               </div>
+               <p class="pergunta-whats">Voce ja chegou a usar Aliexpress?</p>
+               <div class="rating-container" id="rating-container-12">
+                  <button class="rating-button" data-rating="1">Sim</button>
+                  <button class="rating-button" data-rating="2">Nao </button>
+               </div>
+               <button type="button" class="enviarCodigo" id="B4" onclick="showLoadingB4();" aria-label="Enviar respostas do questionário 4">Enviar respostas</button>
+            </div>
+         </div>
+         <!---- Popup B4 ---->
+         <div class="popup-container" id="popupB4" role="dialog" aria-modal="true" aria-labelledby="popupB4Title">
+            <lord-icon
+                     src="https://cdn.lordicon.com/qnwzeeae.json"
+                     trigger="loop"
+                     colors="primary:#06B32E,secondary:#f4f4f4"
+                     class="lordicon-style">
+                  </lord-icon>
+            <span id="popupB4Title" class="popup-text" style="font-size: 20px;">Você recebeu:</span>
+            <span class="popup-text" style="font-size: 40px; font-weight: bold; margin-top: -10px; color: #06B32E;">R$ 43,00</span>
+         </div>
+         <!---------------------- Conteúdo do "p5" ---------------------->
+         <div class="outer-box" id="ad5" style="display: none;">
+            <div class="white-box">
+               <p style="font-size: 22px; text-align: center; font-weight: bold; margin-top: 0px; margin-bottom: 15px; color: #06B32E;">Responda e ganhe R$52,00!</p>
+               <div class="imagem">
+                  <img src="images/ambev.png" style="max-width: 150px; max-height: 150px; width: auto; height: auto; margin: 0 auto; display: block;">
+               </div>
+               <p class="pergunta-whats">De 1 a 5, que nota voce da para a Heineken?</p>
+               <div class="rating-container" id="rating-container-13">
+                  <button class="rating-button" data-rating="1">1 </button>
+                  <button class="rating-button" data-rating="2">2 </button>
+                  <button class="rating-button" data-rating="3">3 </button>
+                  <button class="rating-button" data-rating="4">4 </button>
+                  <button class="rating-button" data-rating="5">5 </button>
+               </div>
+               <p class="pergunta-whats">Voce prefere comprar Heineken com alcool ou sem alcool?</p>
+               <div class="rating-container" id="rating-container-14">
+                  <button class="rating-button" data-rating="1">Com</button>
+                  <button class="rating-button" data-rating="2">Sem</button>
+               </div>
+               <p class="pergunta-whats">Voce ja chegou a consumir a Heineken sem alcool?</p>
+               <div class="rating-container" id="rating-container-15">
+                  <button class="rating-button" data-rating="1">Sim</button>
+                  <button class="rating-button" data-rating="2">Nao </button>
+               </div>
+               <button type="button" class="enviarCodigo" id="B5" onclick="showLoadingB5();" aria-label="Enviar respostas do questionário 5">Enviar respostas</button>
+            </div>
+         </div>
+         <!---- Popup B5 ---->
+         <div class="popup-container" id="popupB5" role="dialog" aria-modal="true" aria-labelledby="popupB5Title">
+            <lord-icon
+                     src="https://cdn.lordicon.com/qnwzeeae.json"
+                     trigger="loop"
+                     colors="primary:#06B32E,secondary:#f4f4f4"
+                     class="lordicon-style">
+                  </lord-icon>
+            <span id="popupB5Title" class="popup-text" style="font-size: 20px;">Você recebeu:</span>
+            <span class="popup-text" style="font-size: 40px; font-weight: bold; margin-top: -10px; color: #06B32E;">R$ 52,00</span>
+         </div>
+         <!---------------------- Conteúdo do "p6" ---------------------->
+         <div class="outer-box" id="ad6" style="display: none">
+            <div class="white-box">
+               <p style="font-size: 22px; text-align: center; font-weight: bold; margin-top: 0px; margin-bottom: 15px; color: #06B32E;">Responda e ganhe R$32,00!</p>
+               <div class="imagem">
+                  <img src="images/mcdonalds.png" style="max-width: 150px; max-height: 150px; width: auto; height: auto; margin: 0 auto; display: block;">
+               </div>
+               <p class="pergunta-whats">De 1 a 5, que nota voce da para o McDonald's?</p>
+               <div class="rating-container" id="rating-container-16">
+                  <button class="rating-button" data-rating="1">1 </button>
+                  <button class="rating-button" data-rating="2">2 </button>
+                  <button class="rating-button" data-rating="3">3 </button>
+                  <button class="rating-button" data-rating="4">4 </button>
+                  <button class="rating-button" data-rating="5">5 </button>
+               </div>
+               <p class="pergunta-whats">Voce ja comprou algum lanche no McDonald's?</p>
+               <div class="rating-container" id="rating-container-17">
+                  <button class="rating-button" data-rating="1">Sim</button>
+                  <button class="rating-button" data-rating="2">Nao</button>
+               </div>
+               <p class="pergunta-whats">Voce recomendaria para algum amigo ou familiar o McDonald's?</p>
+               <div class="rating-container" id="rating-container-18">
+                  <button class="rating-button" data-rating="1">Sim</button>
+                  <button class="rating-button" data-rating="2">Nao</button>
+               </div>
+               <button type="button" class="enviarCodigo" id="B6" onclick="showLoadingB6();" aria-label="Enviar respostas do questionário 6">Enviar respostas</button>
+            </div>
+         </div>
+         <!---- Popup B6 ---->
+         <div class="popup-container" id="popupB6" role="dialog" aria-modal="true" aria-labelledby="popupB6Title">
+            <lord-icon
+                     src="https://cdn.lordicon.com/qnwzeeae.json"
+                     trigger="loop"
+                     colors="primary:#06B32E,secondary:#f4f4f4"
+                     class="lordicon-style">
+                  </lord-icon>
+            <span id="popupB6Title" class="popup-text" style="font-size: 20px;">Você recebeu:</span>
+            <span class="popup-text" style="font-size: 40px; font-weight: bold; margin-top: -10px; color: #06B32E;">R$ 32,00</span>
+         </div>
+         <!---------------------- Conteúdo do "p7" ---------------------->
+         <div class="outer-box" id="ad7" style="display: none">
+            <div class="white-box">
+               <p style="font-size: 22px; text-align: center; font-weight: bold; margin-top: 0px; margin-bottom: 15px; color: #06B32E;">Responda e ganhe R$32,00!</p>
+               <div class="imagem">
+                  <img src="images/burguerking.png"style="max-width: 150px; max-height: 150px; width: auto; height: auto; margin: 0 auto; display: block;">
+               </div>
+               <p class="pergunta-whats">De 1 a 5, que nota voce da para o Burguer King?</p>
+               <div class="rating-container" id="rating-container-19">
+                  <button class="rating-button" data-rating="1">1 </button>
+                  <button class="rating-button" data-rating="2">2 </button>
+                  <button class="rating-button" data-rating="3">3 </button>
+                  <button class="rating-button" data-rating="4">4 </button>
+                  <button class="rating-button" data-rating="5">5 </button>
+               </div>
+               <p class="pergunta-whats">Voce ja comprou algum lanche no Burguer King?</p>
+               <div class="rating-container" id="rating-container-20">
+                  <button class="rating-button" data-rating="1">Sim</button>
+                  <button class="rating-button" data-rating="2">Nao</button>
+               </div>
+               <p class="pergunta-whats">Voce recomendaria para algum amigo ou familiar o Burguer King?</p>
+               <div class="rating-container" id="rating-container-21">
+                  <button class="rating-button" data-rating="1">Sim</button>
+                  <button class="rating-button" data-rating="2">Nao</button>
+               </div>
+               <button type="button" class="enviarCodigo" id="B7" onclick="showLoadingB7();" aria-label="Enviar respostas do questionário 7">Enviar respostas</button>
+            </div>
+         </div>
+         <!---- Popup B7 ---->
+         <div class="popup-container" id="popupB7" role="dialog" aria-modal="true" aria-labelledby="popupB7Title">
+            <lord-icon
+                     src="https://cdn.lordicon.com/qnwzeeae.json"
+                     trigger="loop"
+                     colors="primary:#06B32E,secondary:#f4f4f4"
+                     class="lordicon-style">
+                  </lord-icon>
+            <span id="popupB7Title" class="popup-text" style="font-size: 20px;">Você recebeu:</span>
+            <span class="popup-text" style="font-size: 40px; font-weight: bold; margin-top: -10px; color: #06B32E;">R$ 32,00</span>
+         </div>
+         <!---------------------- Conteúdo do "p8" ---------------------->
+         <div class="outer-box" id="ad8" style="display: none">
+            <div class="white-box">
+               <p style="font-size: 22px; text-align: center; font-weight: bold; margin-top: 0px; margin-bottom: 15px; color: #06B32E;">Responda e ganhe R$27,00!</p>
+               <div class="imagem">
+                  <img src="images/vivo.png" style="max-width: 150px; max-height: 150px; width: auto; height: auto; margin: 0 auto; display: block;">
+               </div>
+               <p class="pergunta-whats">De 1 a 5, que nota voce da para a Vivo?</p>
+               <div class="rating-container" id="rating-container-22">
+                  <button class="rating-button" data-rating="1">1 </button>
+                  <button class="rating-button" data-rating="2">2 </button>
+                  <button class="rating-button" data-rating="3">3 </button>
+                  <button class="rating-button" data-rating="4">4 </button>
+                  <button class="rating-button" data-rating="5">5 </button>
+               </div>
+               <p class="pergunta-whats">Voce ja comprou algum produto da Vivo?</p>
+               <div class="rating-container" id="rating-container-23">
+                  <button class="rating-button" data-rating="1">Sim</button>
+                  <button class="rating-button" data-rating="2">Nao</button>
+               </div>
+               <p class="pergunta-whats">Voce recomendaria para algum amigo ou familiar a Vivo?</p>
+               <div class="rating-container" id="rating-container-24">
+                  <button class="rating-button" data-rating="1">Sim</button>
+                  <button class="rating-button" data-rating="2">Nao</button>
+               </div>
+               <button type="button" class="enviarCodigo" id="B8" onclick="showLoadingB8();" aria-label="Enviar respostas do questionário 8">Enviar respostas</button>
+            </div>
+         </div>
+         <!---- Popup B8 ---->
+         <div class="popup-container" id="popupB8" role="dialog" aria-modal="true" aria-labelledby="popupB8Title">
+            <lord-icon
+                     src="https://cdn.lordicon.com/qnwzeeae.json"
+                     trigger="loop"
+                     colors="primary:#06B32E,secondary:#f4f4f4"
+                     class="lordicon-style">
+                  </lord-icon>
+            <span id="popupB8Title" class="popup-text" style="font-size: 20px;">Você recebeu:</span>
+            <span class="popup-text" style="font-size: 40px; font-weight: bold; margin-top: -10px; color: #06B32E;">R$ 27,00</span>
+         </div>
+         <!---------------------- Conteúdo do "p9" ---------------------->
+         <div class="outer-box" id="ad9" style="display: none">
+            <div class="white-box">
+               <p style="font-size: 22px; text-align: center; font-weight: bold; margin-top: 0px; margin-bottom: 15px; color: #06B32E;">Responda e ganhe R$30,00!</p>
+               <div class="imagem">
+                  <img src="images/claro.png" style="max-width: 150px; max-height: 150px; width: auto; height: auto; margin: 0 auto; display: block;">
+               </div>
+               <p class="pergunta-whats">De 1 a 5, que nota voce da para a Claro?</p>
+               <div class="rating-container" id="rating-container-25">
+                  <button class="rating-button" data-rating="1">1 </button>
+                  <button class="rating-button" data-rating="2">2 </button>
+                  <button class="rating-button" data-rating="3">3 </button>
+                  <button class="rating-button" data-rating="4">4 </button>
+                  <button class="rating-button" data-rating="5">5 </button>
+               </div>
+               <p class="pergunta-whats">Voce ja comprou algum produto da Claro?</p>
+               <div class="rating-container" id="rating-container-26">
+                  <button class="rating-button" data-rating="1">Sim</button>
+                  <button class="rating-button" data-rating="2">Nao</button>
+               </div>
+               <p class="pergunta-whats">Voce recomendaria para algum amigo ou familiar a Claro?</p>
+               <div class="rating-container" id="rating-container-27">
+                  <button class="rating-button" data-rating="1">Sim</button>
+                  <button class="rating-button" data-rating="2">Nao</button>
+               </div>
+               <button type="button" class="enviarCodigo" id="B9" onclick="showLoadingB9();" aria-label="Enviar respostas do questionário 9">Enviar respostas</button>
+            </div>
+         </div>
+         <!---- Popup B9 ---->
+         <div class="popup-container" id="popupB9" role="dialog" aria-modal="true" aria-labelledby="popupB9Title">
+            <lord-icon
+                     src="https://cdn.lordicon.com/qnwzeeae.json"
+                     trigger="loop"
+                     colors="primary:#06B32E,secondary:#f4f4f4"
+                     class="lordicon-style">
+                  </lord-icon>
+            <span id="popupB9Title" class="popup-text" style="font-size: 20px;">Você recebeu:</span>
+            <span class="popup-text" style="font-size: 40px; font-weight: bold; margin-top: -10px; color: #06B32E;">R$ 30,00</span>
+         </div>
+         <!---------------------- Conteúdo do "p10" ---------------------->
+         <div class="outer-box" id="ad10" style="display: none">
+            <div class="white-box">
+               <p style="font-size: 22px; text-align: center; font-weight: bold; margin-top: 0px; margin-bottom: 15px; color: #06B32E;">Responda e ganhe R$43,00!</p>
+               <div class="imagem">
+                  <img src="images/tim.png" style="max-width: 150px; max-height: 150px; width: auto; height: auto; margin: 0 auto; display: block;">
+               </div>
+               <p class="pergunta-whats">De 1 a 5, que nota voce da para a Tim?</p>
+               <div class="rating-container" id="rating-container-28">
+                  <button class="rating-button" data-rating="1">1 </button>
+                  <button class="rating-button" data-rating="2">2 </button>
+                  <button class="rating-button" data-rating="3">3 </button>
+                  <button class="rating-button" data-rating="4">4 </button>
+                  <button class="rating-button" data-rating="5">5 </button>
+               </div>
+               <p class="pergunta-whats">Voce ja comprou algum produto da Tim?</p>
+               <div class="rating-container" id="rating-container-29">
+                  <button class="rating-button" data-rating="1">Sim</button>
+                  <button class="rating-button" data-rating="2">Nao</button>
+               </div>
+               <p class="pergunta-whats">Voce recomendaria para algum amigo ou familiar a Tim?</p>
+               <div class="rating-container" id="rating-container-30">
+                  <button class="rating-button" data-rating="1">Sim</button>
+                  <button class="rating-button" data-rating="2">Nao</button>
+               </div>
+               <button type="button" class="enviarCodigo" id="B10" onclick="showLoadingB10();" aria-label="Enviar respostas do questionário 10">Enviar respostas</button>
+            </div>
+         </div>
+         <!---- Popup B10 ---->
+         <div class="popup-container" id="popupB10" role="dialog" aria-modal="true" aria-labelledby="popupB10Title">
+           <lord-icon
+                    src="https://cdn.lordicon.com/qnwzeeae.json"
+                    trigger="loop"
+                    colors="primary:#06B32E,secondary:#f4f4f4"
+                    class="lordicon-style">
+                 </lord-icon>
+            <span id="popupB10Title" class="popup-text" style="font-size: 20px;">Você recebeu:</span>
+            <span class="popup-text" style="font-size: 40px; font-weight: bold; margin-top: -10px; color: #06B32E;">R$ 43,00</span>
+         </div>
+         <!---------------------- Conteúdo do "p11" ---------------------->
+         <div class="white-box" id="ad11" style="display: none">
+         </div>
+         <!--------------------- Limite atingido --------------------->
+         <div class="popup-containerL" id="popupL" role="dialog" aria-modal="true" aria-labelledby="popupLTitle">
+            <div id="container-progresso" style="display: flex; margin: 0 auto; width: 300px; height: 300px;">
+               <svg viewbox="0 0 36 36" id="barra-progresso-svg">
+                  <circle cx="18" cy="18" r="16" fill="none" stroke="#ccc" stroke-width="3"></circle>
+                  <circle cx="18" cy="18" r="16" fill="none" stroke="#06B32E" stroke-width="3" id="minha-barra-progresso" stroke-dasharray="0 1000"></circle>
+               </svg>
+               <div id="texto-progresso">
+                  <span id="valor-saque" style="font-size: 23px;">R$100.00</span>
+                  <span style=" color: #202020; font-size: 14px;">Seu saldo subiu!</span>
+               </div>
+            </div>
+            <p id="popupLTitle" style="font-size: 32px; color: #28a745; text-align: center; margin-top: 15px; margin-bottom: -5px;">parabéns!</p>
+            <p class="popup-textL" style="margin-bottom: 20px; font-size: 18px; color: #636363">Voce atingiu seu<br>limite diario!</p>
+            <button class="desbloquear-button" style="font-weight: bold; font-size: 18px; border-radius: 12px; margin-top: 15px;" href="#" onclick="mostrarPagina('saque')">SAQUE AGORA</button>
+         </div>
+         <!--------------------- Menu debaixo --------------------->
+         <div style="margin-bottom: 80px;"></div>
+         <div class="menuemb">
+            <!-- Chamando a função para mostrar "Início" -->
+            <a href="#" onclick="mostrarPagina('saque')">
+            <span class="material-symbols-outlined" style="text-align: center; width: 120%; margin: 15px; font-size: 40px; color: rgb(101, 101, 101);">paid</span>
+            </a>
+            <!-- Chamando para mostrar "Pagina 2" -->
+            <a href="javascript:void(0)" onclick="mostrarPagina('inicio')">
+            <span class="material-symbols-outlined" style="text-align: center; width: 120%; margin: 15px; font-size: 40px; color: #06B32E;">home</span>
+            </a>
+            <!-- Chamando a função para mostrar "Saque" -->
+            <a href="#" onclick="mostrarPagina('bonus')">
+            <span class="material-symbols-outlined" style="text-align: center; width: 120%; margin: 15px; font-size: 40px; color: rgb(101, 101, 101);">help</span>
+            </a>
+         </div>
+      </div>
+      <!--------------------- Conteúdo do "Saque" --------------------->
+      <div id="saque" style="display: none;">
+         <div class="menu">
+            <a>
+            <img src="images/logoopinapro.webp">
+            </a> 
+            <a></a>
+         </div>
+         <div style="margin-bottom: 100px;"></div>
+         <div class="outer-box">
+            <div class="valor-box-saque">
+               <p style="font-size: 16px; margin-bottom: 15px; text-align: center; color: rgb(101, 101, 101);">Seu saldo</p>
+               <span id="valor-money" style="font-size: 45px; text-align: center; letter-spacing: -2px; color: #06B32E;">R$ 67.00</span>
+            </div>
+         </div>
+         <p style="margin-bottom: 18px; margin-top: 23px; color: rgb(101, 101, 101); text-align: center; font-weight: bold;">Selecione seu tipo de chave PIX</p>
+         <div class="button-container">
+            <button class="square-button" onclick="toggleButton(1)">
+            <img decoding="async" src="images/cpf.webp" alt="Botao 1">
+            </button>
+            <button class="square-button" onclick="toggleButton(2)">
+            <img decoding="async" src="images/telefone.webp" alt="Botao 2">
+            </button>
+            <button class="square-button" onclick="toggleButton(3)">
+            <img decoding="async" src="images/email.webp" alt="Botao 3">
+            </button>
+            <button class="square-button" onclick="toggleButton(4)">
+            <img decoding="async" src="images/qr.webp" alt="Botao 4">
+            </button>
+         </div>
+         <div style="margin-bottom: 15px;"></div>
+         <!--------------------- MENU EMBAIXO --------------------->
+         <div class="menuemb">
+            <!-- Chamando a função para mostrar "Início" -->
+            <a href="#" onclick="mostrarPagina('saque')">
+            <span class="material-symbols-outlined" style="text-align: center; width: 120%; margin: 15px; font-size: 40px; color: #06B32E;">paid</span>
+            </a>
+            <!-- Chamando a função para mostrar "Pagina 2" -->
+            <a href="javascript:void(0)" onclick="mostrarPagina('inicio')">
+            <span class="material-symbols-outlined" style="text-align: center; width: 120%; margin: 15px; font-size: 40px; color: rgb(101, 101, 101);">home</span>
+            </a>
+            <!-- Chamando a função para mostrar "Saque" -->
+            <a href="#" onclick="mostrarPagina('bonus')">
+            <span class="material-symbols-outlined" style="text-align: center; width: 120%; margin: 15px; font-size: 40px; color: rgb(101, 101, 101);">help</span>
+            </a>
+         </div>
+         <input class="form-input" type="text" name="chave-pix" id="chave-pix" placeholder="Digite sua chave PIX aqui">
+         <input class="form-input" style="margin-top: 15px;" type="text" name="quantia" id="quantia" placeholder="Digite o valor que deseja sacar" inputmode="numeric" oninput="formatarValor(this)">
+         <button class="desbloquear-button" onclick="showPopup()" style="font-weight: bold; font-size: 18px; border-radius: 12px; margin-top: 15px;">REALIZAR SAQUE</button>
+         <!--------------------- TAXA DESBLOQUEIO --------------------->
+         <div class="popup-container" id="popup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+            <lottie-player src="https://lottie.host/7c73a00c-afa8-4ad5-b6b7-d8050e57f0c3/pg6N0GhPE7.json" background="#ffffff" speed="1.25" style="width: 150px; height: 150px; margin: 0 auto; display: flex;" loop="" autoplay="" direction="1" mode="normal"></lottie-player>
+            <!--<span class="popup-text" style="font-size: 20px; font-weight: bold;">APRENDA A DESBLOQUEAR<br>SEU SALDO EM 1 MINUTO</span>--->
+            <span id="popupTitle" class="popup-text" style="font-size: 20px; font-weight: bold;">DESBLOQUEAR SEU SALDO</span>
+            <div style="margin-bottom: 20px;"></div>
+            <p class="popup-text" style="padding-left: 5%; padding-right: 5%; text-align: justify;">
+               Usamos uma <b><u>taxa anti-fraude</u></b> para evitar <b>fraudes</b> e <b>abuso</b> nos saques.<br><br>
+               <b><i>Fique tranquilo!</i></b> Você receberá <b>100% do valor da taxa</b> de volta junto ao seu saque.<br><br>
+               É apenas uma <b>etapa de validação</b> para confirmar que você é um <i>humano</i> e <i>não um robô</i>.
+            </p>
+                        <div style="margin-bottom: 20px;"></div>
+            <!-- Modifique o botão para usar a nova função -->
+            <button class="desbloquear-button" style="font-weight: bold;" onclick="abrirComParametros()">DESBLOQUEAR AGORA</button>
+            <!--<button class="desbloquear-button" style="font-weight: bold;" onclick="video();">VEJA COMO</button>--->
+         </div>
+         <div style="margin-bottom: 120px;"></div>
+         <!--------------------- VIDEO DESBLOQUEIO --------------------->
+         <!--<div class="popup-container" id="popupvideo">
+            <div style="width: 70%; height: 70%; display: flex; margin: 0 auto; border-radius: 12px; margin-bottom: 10px;">
+            
+              <div id="vid_6590e057fa276e0009498386" style="position:relative;width:100%;padding: 178.21782178217822% 0 0; margin-bottom: 10px; border-radius: 12px; display: flex; margin: 0 auto;"><img id="thumb_6590e057fa276e0009498386" src="https://images.converteai.net/0b265e52-7b06-411f-b1b3-e2e5a9c23f78/players/6590e057fa276e0009498386/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"><div id="backdrop_6590e057fa276e0009498386" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div></div><script type="text/javascript" id="scr_6590e057fa276e0009498386">var s=document.createElement("script");s.src="https://scripts.converteai.net/0b265e52-7b06-411f-b1b3-e2e5a9c23f78/players/6590e057fa276e0009498386/player.js",s.async=!0,document.head.appendChild(s);</script>
+            
+            </div>
+            
+            <button class="desbloquear-button" style="font-weight: bold;" onclick="window.open('./vsl/', '_blank')">DESBLOQUEAR AGORA</button>
+            
+            </div>
+            
+            <div style="margin-bottom: 20px;"></div>--->
+      </div>
+      <!--------------------- Pagina bonus --------------------->
+      <div id="bonus" style="display: none;">
+         <!--------------------- Menu de cima --------------------->
+         <div class="menu">
+            <a>
+            <img src="images/logoopinapro.webp">
+            </a> 
+            <a></a>
+         </div>
+         <div style="margin-bottom: 90px;"></div>
+         <div style="margin-bottom: 110px;"></div>
+         <p class="faq-title">Perguntas frequentes</p>
+         <div class="faq-container">
+            <div class="faq-item">
+               <div class="question" onclick="toggleAnswer(this)">Preciso pagar a taxa toda vez?</div>
+               <div class="answer">Não! A taxa <b>seria paga somente a primeira vez</b>, para confirmar que voce seria um humano, e nao um robo. Voce recebera o estorno do valor da taxa, apos o primeiro saque!</div>
+            </div>
+            <div class="faq-item">
+               <div class="question" onclick="toggleAnswer(this)">Por que existe a taxa?</div>
+               <div class="answer"> Serve como uma etapa anti-fraude, para evitar fraudes e abuso dos saques que estavam ocorrendo dentro da plataforma! Mas nao precisa se preocupar, voce recebera o valor da taxa de volta, junto ao valor do seu saque, seria apenas uma etapa de validação de que voce e humano e nao um robo.</div>
+            </div>
+            <div class="faq-item">
+               <div class="question" onclick="toggleAnswer(this)">Em quanto tempo vou receber?</div>
+               <div class="answer">Voce recebera seu saque dentro de 24 horas, da mesma forma que voce receber seu saque teste!</div>
+            </div>
+            <div class="faq-item">
+               <div class="question" onclick="toggleAnswer(this)">Quantas vezes posso sacar por dia?</div>
+               <div class="answer">Quantas voce quiser, mas existe uma quantidade limitada de codigos que temos acesso por dia!</div>
+            </div>
+            <div class="faq-item">
+               <div class="question" onclick="toggleAnswer(this)">Como usa o aplicativo?</div>
+               <div class="answer">e muito simples de usar! Basta responder as simples perguntas sobre as empresas, no menu principal, e por fim, clicar no botao de "Enviar respostas", quando enviar, ja recebera seu dinheiro pela tarefa realizada!</div>
+            </div>
+         </div>
+         <div style="margin-bottom: 150px;"></div>
+         <!--------------------- Menu debaixo --------------------->
+         <div class="menuemb">
+            <!-- Chamando a função para mostrar "Início" -->
+            <a href="#" onclick="mostrarPagina('saque')">
+            <span class="material-symbols-outlined" style="text-align: center; width: 120%; margin: 15px; font-size: 40px; color: rgb(101, 101, 101);">paid</span>
+            </a>
+            <!-- Chamando a função para mostrar "Pagina 2" -->
+            <a href="javascript:void(0)" onclick="mostrarPagina('inicio')">
+            <span class="material-symbols-outlined" style="text-align: center; width: 120%; margin: 15px; font-size: 40px; color: rgb(101, 101, 101);">home</span>
+            </a>
+            <!-- Chamando a função para mostrar "Saque" -->
+            <a href="#" onclick="mostrarPagina('bonus')">
+            <span class="material-symbols-outlined" style="text-align: center; width: 120%; margin: 15px; font-size: 40px; color: #06B32E;">help</span>
+            </a>
+         </div>
+      </div>
+      <!--------------------- Fim do body --------------------->
+      <script>
+         
+const inicioDiv = document.getElementById('inicio');
+const saqueDiv = document.getElementById('saque');
+const loginDiv = document.getElementById('login');
+const bonusDiv = document.getElementById('bonus');
+
+function playAudio() {
+    var audio = document.getElementById("meuAudio");
+    audio.play();
+}
+
+// função para definir um cookie
+function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    const expires = `expires=${d.toUTCString()}`;
+    document.cookie = `${cname}=${cvalue}; ${expires}; path=/`;
+}
+
+// função para obter o valor de um cookie
+function getCookie(cname) {
+    const name = `${cname}=`;
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) === 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return '';
+}
+
+let valor = parseFloat(getCookie('valor')) || 100.00;
+const valorSpan = document.getElementById('valor');
+const valorSpanSaque = document.getElementById('valor-saque');
+const valorSpanMoney = document.getElementById('valor-money');
+
+function atualizarValor() {
+    valorSpan.textContent = `R$ ${valor.toFixed(2)}`;
+    valorSpanSaque.textContent = `R$ ${valor.toFixed(2)}`;
+    valorSpanMoney.textContent = `R$ ${valor.toFixed(2)}`;
+    setCookie('valor', valor.toFixed(2), 365); // Armazena o valor como um cookie vÃ¡lido por 1 ano
+}
+
+atualizarValor(); // Atualiza o valor inicial na caixa de valor
+
+// Array com os valores desejados
+const valoresDesejados = [33, 34, 47, 43, 52, 32, 32, 27, 30, 43];
+
+// função para aumentar o valor
+function aumentarValor() {
+    // Se ainda houver valores no array
+    if (valoresDesejados.length > 0) {
+        // Retira o prÃ³ximo valor do array
+        const valorIncremento = valoresDesejados.shift();
+
+        // Adiciona o valor ao total
+        valor += valorIncremento;
+
+        // Atualiza e verifica o valor
+        atualizarValor();
+        verificarValor();
+    }
+}  
+
+
+
+
+
+function mostrarPagina(pagina) {
+  inicioDiv.style.display = pagina === 'inicio' ? 'block' : 'none';
+  saqueDiv.style.display = pagina === 'saque' ? 'block' : 'none';
+  loginDiv.style.display = pagina === 'login' ? 'block' : 'none';
+  bonusDiv.style.display = pagina === 'bonus' ? 'block' : 'none';
+}
+
+function trocarDiv(esconderId, mostrarId) {
+  document.getElementById(esconderId).style.display = 'none';
+  document.getElementById(mostrarId).style.display = 'block';
+}
+
+// Atualizar o valor exibido inicialmente
+atualizarValor();
+
+
+
+
+//--------------------------------- Ad 1 ---------------------------------
+
+
+function showPopupB1() {
+    document.getElementById('B1').disabled = true;
+    document.getElementById('popupB1').style.display = 'block';
+}
+
+function closePopupB1() {
+    document.getElementById('popupB1').style.display = 'none';
+    document.getElementById('B1').disabled = true;
+}   
+
+// Carregando B1
+    function showLoadingB1() {
+        var button = document.getElementById("B1");
+            showPopupB1();
+            playAudio();
+            // Simulando um atraso de 3 segundos para o showPopup2()
+            setTimeout(function () {
+                closePopupB1();
+                aumentarValor();
+                trocarDiv('ad1', 'ad2');
+            }, 4000); // 3 segundos
+        }
+
+
+//--------------------------------- Ad 2 ---------------------------------
+
+
+function showPopupB2() {
+    document.getElementById('popupB2').style.display = 'block';
+    document.getElementById('B2').disabled = true;
+}
+
+function closePopupB2() {
+    document.getElementById('popupB2').style.display = 'none';
+    document.getElementById('B2').disabled = true;
+}   
+
+// Carregando B2
+    function showLoadingB2() {
+        var button = document.getElementById("B2");
+            showPopupB2();
+            playAudio();
+            // Simulando um atraso de 3 segundos para o showPopup2()
+            setTimeout(function () {
+                closePopupB2();
+                aumentarValor();
+                trocarDiv('ad2', 'ad3');
+            }, 4000); // 3 segundos
+        }
+
+    
+//--------------------------------- Ad 3 ---------------------------------
+
+
+function showPopupB3() {
+    document.getElementById('popupB3').style.display = 'block';
+    document.getElementById('B3').disabled = true;
+}
+
+function closePopupB3() {
+    document.getElementById('popupB3').style.display = 'none';
+    document.getElementById('B3').disabled = true;
+}   
+
+
+    function showLoadingB3() {
+        var button = document.getElementById("B3");
+            showPopupB3();
+            playAudio();
+            setTimeout(function () {
+                closePopupB3();
+                aumentarValor();
+                trocarDiv('ad3', 'ad4');
+            }, 4000); 
+        }
+
+
+//--------------------------------- Ad 4 ---------------------------------
+
+
+function showPopupB4() {
+    document.getElementById('popupB4').style.display = 'block';
+    document.getElementById('B4').disabled = true;
+}
+
+function closePopupB4() {
+    document.getElementById('popupB4').style.display = 'none';
+    document.getElementById('B4').disabled = true;
+}   
+
+
+    function showLoadingB4() {
+        var button = document.getElementById("B4");
+            showPopupB4();
+            playAudio();
+            setTimeout(function () {
+                closePopupB4();
+                aumentarValor();
+                trocarDiv('ad4', 'ad5');
+            }, 4000); 
+        }
+
+
+//--------------------------------- Ad 5 ---------------------------------
+
+
+function showPopupB5() {
+    document.getElementById('popupB5').style.display = 'block';
+    document.getElementById('B5').disabled = true;
+}
+
+function closePopupB5() {
+    document.getElementById('popupB5').style.display = 'none';
+    document.getElementById('B5').disabled = true;
+}   
+
+
+    function showLoadingB5() {
+        var button = document.getElementById("B5");
+            showPopupB5();
+            playAudio();
+            setTimeout(function () {
+                closePopupB5();
+                aumentarValor();
+                trocarDiv('ad5', 'ad6');
+            }, 4000);
+        }
+
+    
+//--------------------------------- Ad 6 ---------------------------------
+
+
+function showPopupB6() {
+    document.getElementById('popupB6').style.display = 'block';
+    document.getElementById('B6').disabled = true;
+}
+
+function closePopupB6() {
+    document.getElementById('popupB6').style.display = 'none';
+    document.getElementById('B6').disabled = true;
+}   
+
+
+    function showLoadingB6() {
+        var button = document.getElementById("B6");
+            showPopupB6();
+            playAudio();
+            setTimeout(function () {
+                closePopupB6();
+                aumentarValor();
+                trocarDiv('ad6', 'ad7');
+            }, 4000);
+        }
+
+//--------------------------------- Ad 7 ---------------------------------
+
+
+function showPopupB7() {
+    document.getElementById('popupB7').style.display = 'block';
+    document.getElementById('B7').disabled = true;
+}
+
+function closePopupB7() {
+    document.getElementById('popupB7').style.display = 'none';
+    document.getElementById('B7').disabled = true;
+}   
+
+
+    function showLoadingB7() {
+        var button = document.getElementById("B7");
+            showPopupB7();
+            playAudio();
+            setTimeout(function () {
+                closePopupB7();
+                aumentarValor();
+                trocarDiv('ad7', 'ad8');
+            }, 4000);
+        }
+
+
+//--------------------------------- Ad 8 ---------------------------------
+
+
+function showPopupB8() {
+    document.getElementById('popupB8').style.display = 'block';
+    document.getElementById('B8').disabled = true;
+}
+
+function closePopupB8() {
+    document.getElementById('popupB8').style.display = 'none';
+    document.getElementById('B8').disabled = true;
+}   
+
+
+    function showLoadingB8() {
+        var button = document.getElementById("B8");
+            showPopupB8();
+            playAudio();
+            setTimeout(function () {
+                closePopupB8();
+                aumentarValor();
+                trocarDiv('ad8', 'ad9');
+            }, 4000);
+        }
+
+
+//--------------------------------- Ad 9 ---------------------------------
+
+function showLoadingB9() {
+    var button = document.getElementById("B9");
+        document.getElementById('popupB9').style.display = 'block';
+        playAudio();
+        setTimeout(function () {
+            document.getElementById('popupB9').style.display = 'none';
+            aumentarValor();
+            aumentarValor();
+            trocarDiv('ad9', 'ad10');
+        }, 4000);
+    }
+
+
+
+//--------------------------------- Ad 10 ---------------------------------
+
+
+    function showLoadingB10() {
+        var button = document.getElementById("B10");
+            document.getElementById('popupB10').style.display = 'block';
+            playAudio();
+            setTimeout(function () {
+                document.getElementById('popupB10').style.display = 'none';
+                aumentarValor();
+                trocarDiv('ad10', 'ad11');
+            }, 4000);
+        }
+
+
+//---------------------------- botão chave PIX ---------------------------
+ 
+ 
+let activeButton = null;
+
+function toggleButton(buttonNumber) {
+  const buttons = document.querySelectorAll('.square-button');
+
+  if (activeButton !== null) {
+   buttons[activeButton - 1].classList.remove('active');
+  }
+
+  if (activeButton === buttonNumber) {
+    activeButton = null;
+  } else {
+    buttons[buttonNumber - 1].classList.add('active');
+    activeButton = buttonNumber;
+  }
+} 
+ 
+ 
+    
+    
+    
+    
+    
+    
+    
+
+// Popup SAQUE
+
+function showPopup() {
+  document.getElementById('popup').style.display = 'block';
+}
+
+function closePopup() {
+  document.getElementById('popup').style.display = 'none';
+}  
+
+// Popup LIMITE DIÃRIO
+
+function showPopupL() {
+  document.getElementById('popupL').style.display = 'block';
+}
+
+function closePopupL() {
+  document.getElementById('popupL').style.display = 'none';
+}  
+
+
+
+// POPUP Limite diÃ¡rio quando bate X valor
+function verificarValor() {
+    if (valor >= 430 && valor < 500) {
+        // Popup para valor >= 1362.60 e < 2725.20
+        showPopupL();
+    } else if (valor >= 940 && valor < 950) {
+        // Popup para valor >= 2725.20 e < 4087.8
+        showPopupL();
+    } else if (valor >= 1400) {
+        // Popup para valor >= 4087.8
+        showPopupL();
+    }
+    
+}
+
+
+
+
+function fecharPopupEAgendarReaparecimento() {
+    var popupButtonContainer = document.querySelector(".popup-buttonL-container");
+    popupButtonContainer.style.display = "none"; // Oculta o botão
+
+    // Define um temporizador para mostrar o botão apÃ³s 10 segundos
+    setTimeout(function() {
+        popupButtonContainer.style.display = "block";
+    }, 86400000); // 24 horas
+
+    // Aqui vocÃª tambÃ©m deve adicionar a função para fechar o popup
+    closePopupL();
+}
+
+// Chama a função para mostrar o botão apÃ³s 10 segundos (10000 milissegundos)
+setTimeout(function() {
+    var botaoContainer = document.querySelector(".popup-buttonL-container");
+    botaoContainer.style.display = "block";
+}, 86400000); // 24 horas
+
+
+// Script botão login
+function showLoading() {
+  var button = document.getElementById("prosseguir-button");
+  button.disabled = true; // Desabilitar o botão enquanto a animaÃ§Ã£o ocorre
+
+  button.innerHTML = '<span class="loading-spinner"></span> Carregando...';
+
+  // Simulando um atraso de 3 segundos para a animaÃ§Ã£o
+  setTimeout(function() {
+    // Redirecionar apÃ³s o atraso
+    mostrarPagina('inicio');
+  }, 2000); // 2 segundos
+}
+
+
+
+
+function formatarValor(input) {
+  // Remove todos os caracteres nÃ£o numÃ©ricos
+  var valor = input.value.replace(/[^0-9]/g, '');
+  
+  // Divide o valor em parte inteira e decimal
+  var parteInteira = valor.slice(0, -2);
+  var centavos = valor.slice(-2);
+  
+  // Reconstroi o valor formatado
+  input.value = parteInteira + '.' + centavos;
+}
+function validarEmail(event) {
+    // Evita o envio do formulário automaticamente
+    event.preventDefault();
+
+    // Obtém o valor do campo de email
+    var email = document.getElementById("email").value;
+
+    // Expressão regular para validar o email
+    var emailValido = /\S+@\S+\.\S+/;
+
+    if (email === "") {
+        alert("Por favor, insira seu e-mail!");
+    } else if (!emailValido.test(email)) {
+        alert("Por favor, insira um e-mail válido!");
+    } else {
+        // Se o email for válido, continua o fluxo
+        showLoading();
+    }
+}
+
+
+function showPopupInicio() {
+    document.getElementById('popupinicio').style.display = 'block';
+  }
+
+function closePopupInicio() {
+    document.getElementById('popupinicio').style.display = 'none';
+}
+
+
+function in1() {
+    closePopupInicio();
+    showPopupInicio2();
+
+        // Agendar a exibiÃ§Ã£o do prÃ³ximo apÃ³s 5 segundos
+        setTimeout(function() {
+            closePopupInicio2();
+            showPopupInicio3();
+        }, 10000);
+}    
+
+function showPopupVideo() {
+    document.getElementById('popupvideo').style.display = 'block';
+  }
+
+function closePopupVideo() {
+    document.getElementById('popupvideo').style.display = 'none';
+}
+
+function video() {
+    closePopup();
+    showPopupVideo();
+}   
+
+
+
+
+      
+function toggleAnswer(question) {
+    const answer = question.nextElementSibling;
+    answer.classList.toggle("active");
+  
+    const allQuestions = document.querySelectorAll(".question");
+    allQuestions.forEach((otherQuestion) => {
+      if (otherQuestion !== question) {
+        otherQuestion.nextElementSibling.classList.remove("active");
+      }
+    });
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    atualizarValor(); // PRIMEIRO atualiza o saldo na tela
+    verificarValor(); // DEPOIS verifica se o saldo precisa abrir o popup
+
+    const containers = document.querySelectorAll('.rating-container');
+  
+    containers.forEach(function (container) {
+      const buttons = container.querySelectorAll('.rating-button');
+  
+      buttons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          // Remove a classe 'active' apenas do conjunto de botões dentro do mesmo container
+          buttons.forEach(function (btn) {
+            btn.classList.remove('active');
+          });
+  
+          // Adiciona a classe 'active' apenas ao botão clicado
+          button.classList.add('active');
+        });
+      });
+    });
+});
+
+  
+  
+
+  // function toggleCard(clickedElement) {
+//     const allCards = document.querySelectorAll('.card__grade');
+//     allCards.forEach(card => {
+//         card.classList.remove('active');
+//     });
+
+//     clickedElement.classList.add('active');
+// }
+
+function toggleCard(clickedElement) {
+    const allCards = document.querySelectorAll('.card__grade');
+    
+    allCards.forEach(card => {
+        card.classList.remove('active');
+    });
+
+    // Adicione um switch para lidar com diferentes ações
+    switch (clickedElement.id) {
+        case 'card__grade1':
+            updateStars('star1', 'fa-solid fa-star active', '#ffd700');
+            updateStars('star2', 'fa-regular fa-star', '#7e7e7e');
+            updateStars('star3', 'fa-regular fa-star', '#7e7e7e');
+            updateStars('star4', 'fa-regular fa-star', '#7e7e7e');
+            updateStars('star5', 'fa-regular fa-star', '#7e7e7e');
+            break;
+        case 'card__grade2':
+            updateStars('star1', 'fa-solid fa-star active', '#ffd700');
+            updateStars('star2', 'fa-solid fa-star active', '#ffd700');
+            updateStars('star3', 'fa-regular fa-star', '#7e7e7e');
+            updateStars('star4', 'fa-regular fa-star', '#7e7e7e');
+            updateStars('star5', 'fa-regular fa-star', '#7e7e7e');
+            break;
+        case 'card__grade3':
+            updateStars('star1', 'fa-solid fa-star active', '#ffd700');
+            updateStars('star2', 'fa-solid fa-star active', '#ffd700');
+            updateStars('star3', 'fa-solid fa-star active', '#ffd700');
+            updateStars('star4', 'fa-regular fa-star', '#7e7e7e');
+            updateStars('star5', 'fa-regular fa-star', '#7e7e7e');
+            break;
+        case 'card__grade4':
+            updateStars('star1', 'fa-solid fa-star active', '#ffd700');
+            updateStars('star2', 'fa-solid fa-star active', '#ffd700');
+            updateStars('star3', 'fa-solid fa-star active', '#ffd700');
+            updateStars('star4', 'fa-solid fa-star active', '#ffd700');
+            updateStars('star5', 'fa-regular fa-star', '#7e7e7e');
+            break;
+        case 'card__grade5':
+            updateStars('star1', 'fa-solid fa-star active', '#ffd700');
+            updateStars('star2', 'fa-solid fa-star active', '#ffd700');
+            updateStars('star3', 'fa-solid fa-star active', '#ffd700');
+            updateStars('star4', 'fa-solid fa-star active', '#ffd700');
+            updateStars('star5', 'fa-solid fa-star active', '#ffd700');
+            break;
+        // Adicione mais casos conforme necessário
+        default:
+            // Ação padrão, se nenhum caso corresponder
+            console.log("Nenhum caso correspondente");
+    }
+}
+
+function updateStars(elementId, className, color) {
+    const starElement = document.getElementById(elementId);
+    if (starElement) {
+        starElement.className = className;
+        starElement.style.color = color; // Adiciona a cor amarela
+    } else {
+        console.error("Elemento não encontrado com ID: " + elementId);
+    }
+}
+
+// Adicione um evento de clique aos elementos que deseja controlar
+const cards = document.querySelectorAll('.card__grade');
+
+cards.forEach(card => {
+    card.addEventListener('click', function() {
+        toggleCard(this); // "this" se refere ao elemento clicado
+    });
+});
+      </script>
+      <!-- Script Utms -->
+      <script>
+          function adicionarParametrosAosLinks() {
+    const urlParams = new URLSearchParams(window.location.search);
+
+    // Modificar os links <a> se houver
+    const links = document.querySelectorAll('a[href]'); // Apenas links com href
+    links.forEach(link => {
+        try {
+            // Verifica se o href é uma URL absoluta válida
+            const href = new URL(link.href, window.location.href);
+            urlParams.forEach((value, key) => {
+                href.searchParams.set(key, value);
+            });
+            link.href = href.toString();
+        } catch (error) {
+            // Ignora links com href inválidos (como "#", "javascript:void(0)", etc.)
+            console.log('Link ignorado (href inválido):', link.href);
+        }
+    });
+}
+
+          // Função para redirecionar com parâmetros da URL atual e o e-mail preenchido
+          function abrirComParametros() {
+            const urlParams = new URLSearchParams(window.location.search);
+
+            // Captura o valor do campo de e-mail, se existir
+            const email = document.getElementById('email')?.value;
+            
+            // Adiciona o e-mail aos parâmetros da URL, caso esteja preenchido
+            if (email) {
+                urlParams.set('email', email);
+            }
+
+            // Constrói a URL de forma mais segura
+            const parametros = urlParams.toString();
+            const novaUrl = parametros ? `../front/?${parametros}` : '../front/';
+            
+            // Redireciona na mesma aba
+            window.location.href = novaUrl;
+        }
+
+          // Chama a função ao carregar a página
+          document.addEventListener('DOMContentLoaded', adicionarParametrosAosLinks);
+      </script>
+      <script src="js/lottie-player.js"></script>
+      <!-- Bibliotecas JavaScript -->
+      <script src="js/jquery-3.6.4.min.js"></script>
+      <!-- Script para carregar Lordicon -->
+      <script src="https://cdn.lordicon.com/lordicon.js"></script>
+
+      <script>
+         window.addEventListener('load', function () {
+           const loader = document.getElementById('loader');
+           loader.style.opacity = '0'; // Faz o fade-out
+           setTimeout(() => {
+             loader.style.display = 'none'; // Remove da tela
+           }, 500); // Depois de 0.5 segundos (tempo do fade-out)
+         });
+         </script>
+         
+   </body>
+</html>
