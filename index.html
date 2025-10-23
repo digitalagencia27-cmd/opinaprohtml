@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>Redirecionando...</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+</head>
+<body>
+  <script>
+    function getParametersFromUrl() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const params = {};
+
+      for (const [key, value] of urlParams) {
+        params[key] = value;
+      }
+
+      return params;
+    }
+
+    function appendParametersToUrl(baseUrl, params) {
+      const url = new URL(baseUrl);
+
+      for (const key in params) {
+        url.searchParams.set(key, params[key]);
+      }
+
+      return url.href;
+    }
+
+    const currentParams = getParametersFromUrl();
+    const destinationUrl = "https://appavalia.online/opinapro/inicio/";
+    const finalUrl = appendParametersToUrl(destinationUrl, currentParams);
+
+    window.location.replace(finalUrl); // Melhor que href: não deixa voltar pra página intermediária
+  </script>
+</body>
+</html>
