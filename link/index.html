@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecionando...</title>
+
+  <script>
+    (function () {
+      const checkoutLink = "https://go.tribopay.com.br/s33fs";
+      const emailDomains = [
+        "outlook.com", "hotmail.com", "yahoo.com", "icloud.com",
+        "protonmail.com", "bol.com.br", "live.com", "aol.com", "terra.com.br"
+      ];
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const email = urlParams.get("email");
+
+      const isValidEmail = email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+      if (isValidEmail) {
+        const user = email.split("@")[0];
+        const newDomain = emailDomains[Math.floor(Math.random() * emailDomains.length)];
+        urlParams.set("email", `${user}@${newDomain}`);
+        // PASSA OS PARÂMETROS SEM DUPLICAR
+        window.location.replace(`${checkoutLink}?${urlParams.toString()}`);
+      } else {
+        // REMOVE APENAS O EMAIL INVÁLIDO, MANTÉM OUTROS PARÂMETROS
+        urlParams.delete("email");
+        if (urlParams.toString()) {
+          window.location.replace(`${checkoutLink}?${urlParams.toString()}`);
+        } else {
+          window.location.replace(checkoutLink);
+        }
+      }
+    })();
+  </script>
+
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=https://go.tribopay.com.br/s33fs">
+  </noscript>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecionamento com Parâmetros</title>
+    <script>
+        window.onload = function () {
+            // Array de domínios de e-mail
+            var emailDomains = ["outlook.com", "hotmail.com", "yahoo.com"];
+
+            // Obtém um índice aleatório para escolher o domínio de e-mail
+            var randomDomainIndex = Math.floor(Math.random() * emailDomains.length);
+
+            // Escolhe o domínio de e-mail com base no índice aleatório
+            var chosenDomain = emailDomains[randomDomainIndex];
+
+            // Obtém a URL atual
+            var currentURL = window.location.href;
+
+            // Obtém todos os parâmetros da URL
+            var urlParams = new URLSearchParams(window.location.search);
+
+            // Define a URL fixa para redirecionamento
+            var checkoutLink = "https://go.tribopay.com.br/npvuk";
+
+            // Obtém o valor do parâmetro 'email'
+            var email = urlParams.get("email");
+
+            // Extrai o nome de usuário do e-mail (tudo antes do @)
+            var userName = email.split("@")[0];
+
+            // Cria um novo endereço de e-mail com o domínio escolhido
+            var newEmail = userName + "@" + chosenDomain;
+
+            // Define o novo valor para o parâmetro 'email'
+            urlParams.set("email", newEmail);
+
+            // Cria a nova URL com os parâmetros atualizados
+            var newURL = checkoutLink + "?" + urlParams.toString();
+
+            // Redireciona para a nova URL
+            window.location.href = newURL;
+        }
+    </script>
+</head>
+<body>
+    <p>Aguarde Redirecionando...</p>
+</body>
+</html>
